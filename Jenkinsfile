@@ -5,7 +5,7 @@ try {
 
 
    node ('aws') {
-        docker.withRegistry('localhost:5000') {
+        
         stage('Deployment on DEV') {
             checkout scm
 
@@ -16,7 +16,7 @@ try {
             sh 'docker tag nginx-proxy  localhost:5000/nginx:latest
             sh 'docker push localhost:5000/nginx:latest
            }  
-        }
+        
     }
 
 
