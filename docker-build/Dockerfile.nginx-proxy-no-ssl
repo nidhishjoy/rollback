@@ -4,7 +4,6 @@ RUN apt-get update \
         && apt-get install -y curl \
         && rm -rf /var/lib/apt/lists/*
 
-COPY ./docker-build/configs/nginx-conf/.htpasswd /etc/nginx/.htpasswd
 COPY ./docker-build/configs/nginx-conf/nginx.conf /etc/nginx/nginx.conf
 COPY ./docker-build/configs/nginx-conf/nginx.tmpl-no-ssl ./nginx.tmpl
 
