@@ -14,8 +14,8 @@ try {
             sh 'docker-compose -f local-compose.yml up -d nginx'
             sh 'sleep 10'
 	    sh 'docker images -a -q'
-            sh 'docker tag nginx  localhost:5000/nginx-proxy:latest'
-            sh 'docker push localhost:5000/nginx-proxy:latest'
+            sh 'docker tag apache  localhost:5000/apache:latest'
+            sh 'docker push localhost:5000/apache:latest'
            }  
         
     }

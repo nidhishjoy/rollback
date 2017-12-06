@@ -2,10 +2,11 @@ version: "2" # https://docs.docker.com/compose/compose-file/
 
 services:
 
-  nginx:
+  apache:
     build:
      
-      dockerfile: ./docker-build/Dockerfile.nginx-proxy
+      dockerfile: Dockerfile
+      image: image: 'bitnami/apache:latest'
     restart: always
     ports:
       - "80:80"
