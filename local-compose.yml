@@ -1,0 +1,11 @@
+version: "2" # https://docs.docker.com/compose/compose-file/
+
+services:
+
+  nginx-proxy:
+    build:
+      context: ./docker-build
+      dockerfile: Dockerfile.nginx-proxy-no-ssl
+    restart: always
+    ports:
+      - "80:80"
