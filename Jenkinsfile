@@ -25,9 +25,4 @@ try {
 
 
 
-
-finally {
-  node ('aws')
- sh 'docker ps'
-
 }
