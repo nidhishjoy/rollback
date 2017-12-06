@@ -20,6 +20,13 @@ try {
         
     }
 
+	node ('master') {
+          stage('creating parameter for jenkins') {      
+           sh 'touch /var/lib/jenkins/testbuild/$BUILD_NUMBER'
+	 
+     }
+  }
+
 }
 
 
