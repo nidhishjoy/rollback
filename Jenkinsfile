@@ -10,8 +10,8 @@ try {
             checkout scm
 
           
-            sh 'docker-compose -f local-compose.yml build nginx'
-            sh 'docker-compose -f local-compose.yml up -d nginx'
+            sh 'docker-compose -f local-compose.yml build apache'
+            sh 'docker-compose -f local-compose.yml up -d apache'
             sh 'sleep 10'
 	    sh 'docker images -a -q'
             sh 'docker tag apache  localhost:5000/apache:latest'
