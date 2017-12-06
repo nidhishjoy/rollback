@@ -1,12 +1,10 @@
-version: "2" # https://docs.docker.com/compose/compose-file/
+version: '2'
 
 services:
-
   apache:
-    build:
-     
-      dockerfile: Dockerfile
-      image: image: 'bitnami/apache:latest'
-    restart: always
+    image: 'bitnami/apache:latest'
+    labels:
+      kompose.service.type: nodeport
     ports:
-      - "80:80"
+      - '80:80'
+      - '443:443'
