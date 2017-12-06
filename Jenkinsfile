@@ -10,8 +10,8 @@ try {
             checkout scm
 
           
-            sh 'docker-compose -f local-compose.yml build node'
-            sh 'docker-compose -f local-compose.yml up -d node'
+            sh 'docker-compose -f local-compose.yml build nginx-proxy'
+            sh 'docker-compose -f local-compose.yml up -d nginx-proxy'
             sh 'sleep 10'
             sh 'docker tag nginx-proxy  localhost:5000/nginx-proxy:latest'
             sh 'docker push localhost:5000/nginx-proxy:latest'
