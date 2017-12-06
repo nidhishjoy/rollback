@@ -2,10 +2,10 @@ version: "2" # https://docs.docker.com/compose/compose-file/
 
 services:
 
-  nginx-proxy:
+  nginx:
     build:
-      context: ./docker-build
-      dockerfile: Dockerfile.nginx-proxy
+     
+      dockerfile: ./docker-build/Dockerfile.nginx-proxy
     restart: always
     ports:
       - "80:80"
