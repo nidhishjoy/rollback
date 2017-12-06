@@ -24,4 +24,11 @@ try {
 
 
 
+finally {
 
+    node ('aws') {
+        stage('Cleanup on testing host') {
+            sh 'docker ps'
+         }
+   }
+}
