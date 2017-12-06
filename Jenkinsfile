@@ -25,7 +25,7 @@ try {
 
  catch (err) {
     currentBuild.result = "FAILED"
-        mail (to: 'buzztime-players@hashedin.com',
+        mail (to: 'nidhish.joy@hashedin.com',
              subject: "Job '${env.JOB_NAME}'- (${env.BUILD_NUMBER}) has FAILED",
              body: "Please go to ${env.BUILD_URL} for more details. ");
 

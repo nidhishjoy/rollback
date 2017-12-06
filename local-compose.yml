@@ -5,7 +5,7 @@ services:
   nginx-proxy:
     build:
       context: ./docker-build
-      dockerfile: Dockerfile.nginx-proxy-no-ssl
+      dockerfile: Dockerfile.nginx-proxy
     restart: always
     ports:
       - "80:80"
