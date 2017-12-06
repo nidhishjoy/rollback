@@ -23,24 +23,3 @@ try {
 
 }
 
- catch (err) {
-    currentBuild.result = "FAILED"
-        mail (to: 'nidhish.joy@hashedin.com',
-             subject: "Job '${env.JOB_NAME}'- (${env.BUILD_NUMBER}) has FAILED",
-             body: "Please go to ${env.BUILD_URL} for more details. ");
-
-        throw err
-  }
-
-
-finally {
-
-    node ('aws') {
-        stage('Cleanup on deployment host') {
-            sh 'docker ps --no-trunc --all --quiet --filter="status=exited" | xargs --no-run-if-empty docker rm || true'
-            sh 'docker images --no-trunc --all --quiet --filter="dangling=true" | xargs --no-run-if-empty docker rmi || true'
-            sh 'docke ps'
-         }
-   }
-}
-
